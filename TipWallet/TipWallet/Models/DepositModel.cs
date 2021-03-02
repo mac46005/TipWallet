@@ -1,13 +1,17 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace TipWallet.Models
 {
-    public class DepositModel
+    public class DepositModel : IBankLog
     {
+        [PrimaryKey,AutoIncrement,NotNull]
         public int Id { get; set; }
-        public decimal Amouht { get; set; }
+        [NotNull]
+        public decimal Amount { get; set; }
+        [NotNull]
         public DateTime TimeStamp { get; set; }
     }
 }
