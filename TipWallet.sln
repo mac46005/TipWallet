@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TipWallet.Android", "TipWallet\TipWallet.Android\TipWallet.Android.csproj", "{F2F69757-B863-497B-B138-2FD599BD088B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TipWallet", "TipWallet\TipWallet\TipWallet.csproj", "{6364FD4D-A24E-421F-A1E5-BEB355F0DCDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2F69757-B863-497B-B138-2FD599BD088B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2F69757-B863-497B-B138-2FD599BD088B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2F69757-B863-497B-B138-2FD599BD088B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F2F69757-B863-497B-B138-2FD599BD088B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2F69757-B863-497B-B138-2FD599BD088B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2F69757-B863-497B-B138-2FD599BD088B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6364FD4D-A24E-421F-A1E5-BEB355F0DCDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6364FD4D-A24E-421F-A1E5-BEB355F0DCDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6364FD4D-A24E-421F-A1E5-BEB355F0DCDB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6364FD4D-A24E-421F-A1E5-BEB355F0DCDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6364FD4D-A24E-421F-A1E5-BEB355F0DCDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6364FD4D-A24E-421F-A1E5-BEB355F0DCDB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F68CC4A-675D-4888-9448-3986F8FCF237}
+	EndGlobalSection
+EndGlobal
