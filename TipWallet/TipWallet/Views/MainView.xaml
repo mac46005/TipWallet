@@ -3,6 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TipWallet.Views.MainView"
              Title="TipWallet">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="History"/>
+        <ToolbarItem Text="Deposit"/>
+        <ToolbarItem Text="Withdraw"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="50"/>
+                <Setter Property="HorizontalOptions"
+                        Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -12,9 +27,9 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <!--<Image Source=""/>-->
-            <Label Text="Current Balance"/>
-            <Label Text="$1000"/>
+            <Image Source="Money.png" Grid.Row="0"/>
+            <Label Text="Current Balance" Grid.Row="1"/>
+            <Label Text="$1000" Grid.Row="2"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
