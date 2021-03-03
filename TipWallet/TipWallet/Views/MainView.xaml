@@ -29,7 +29,7 @@
             </Grid.RowDefinitions>
             <Image Source="Money.png" Grid.Row="0"/>
             <Label Text="Current Balance" Grid.Row="1"/>
-            <Label Text="$1000" Grid.Row="2"/>
+            <Label Text="{Binding Balance}" Grid.Row="2"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
