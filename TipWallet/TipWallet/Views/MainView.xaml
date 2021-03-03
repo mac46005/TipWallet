@@ -4,10 +4,17 @@
              x:Class="TipWallet.Views.MainView"
              Title="TipWallet">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--<Image Source=""/>-->
+            <Label Text="Current Balance"/>
+            <Label Text="$1000"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
