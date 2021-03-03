@@ -4,9 +4,9 @@
              x:Class="TipWallet.Views.MainView"
              Title="TipWallet">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="History"/>
-        <ToolbarItem Text="Deposit"/>
-        <ToolbarItem Text="Withdraw"/>
+        <ToolbarItem Text="History" Command="{Binding History}"/>
+        <ToolbarItem Text="Deposit" Command="{Binding Deposit}"/>
+        <ToolbarItem Text="Withdraw" Command="{Binding Withdraw}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
