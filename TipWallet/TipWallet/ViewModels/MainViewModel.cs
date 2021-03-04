@@ -41,10 +41,8 @@ namespace TipWallet.ViewModels
         { 
             get 
             {
-                decimal depositAmount = _depositRepo.GetAmount().Result - _withdrawRepo.GetAmount().Result;
-                TestMethod();
-                var test = 0;
-                return depositAmount.ToString();
+                var items = _withdrawRepo.GetItems();
+                return "WTF";
             } 
         }
 

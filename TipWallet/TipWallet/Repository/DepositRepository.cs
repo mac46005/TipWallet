@@ -23,8 +23,8 @@ namespace TipWallet.Repository
                 return;
             }
 
-            var documentPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            var databasePath = Path.Combine(documentPath, "TipWallet_DB.db");
+            var documentPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var databasePath = Path.Combine(documentPath, "TipWallet.db");
 
             _connection = new SQLiteAsyncConnection(databasePath);
             await _connection.CreateTableAsync<DepositModel>();
