@@ -70,6 +70,7 @@ namespace TipWallet.Repository
 
         public async Task<decimal> GetAmount()
         {
+            await CreateConnection();
             var table = await _connection.Table<WithdrawModel>().ToListAsync();
             var amounts = table.Select(x => x.Amount);
             decimal total = 0;

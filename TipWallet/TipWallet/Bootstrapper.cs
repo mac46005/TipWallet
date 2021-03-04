@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using TipWallet.Repository;
 using TipWallet.ViewModels;
 
 namespace TipWallet
@@ -42,7 +43,8 @@ namespace TipWallet
                 .ToList()
                 .ForEach(type => ContainerBuilder.RegisterType(type));
             // Singletons
-
+            ContainerBuilder.RegisterType<WithdrawRepository>().SingleInstance();
+            ContainerBuilder.RegisterType<DepositRepository>().SingleInstance();
         }
         private void FinishInitializing()
         {
