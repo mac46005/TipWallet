@@ -5,6 +5,8 @@ using System.Windows.Input;
 using TipWallet.Repository;
 using TipWallet.Views;
 using Xamarin.Forms;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace TipWallet.ViewModels
 {
@@ -13,10 +15,11 @@ namespace TipWallet.ViewModels
         DepositRepository _depositRepo;
         WithdrawRepository _withdrawRepo;
 
-        public MainViewModel(DepositRepository depoRepo,WithdrawRepository withRepo)
+        public MainViewModel(DepositRepository depoRepo, WithdrawRepository withRepo)
         {
             _depositRepo = depoRepo;
             _withdrawRepo = withRepo;
+            Task.Run(async () => await LoadData());
         }
         ///////////////Top Bar Buttons///////////////
         public ICommand Deposit => new Command(async () =>
@@ -37,18 +40,13 @@ namespace TipWallet.ViewModels
 
         });
         ///////////////Properties///////////////
-        public string Balance 
-        { 
-            get 
-            {
-                var items = _withdrawRepo.GetItems();
-                return "WTF";
-            } 
-        }
+        public string Balance { get; set; }
 
-        public void TestMethod()
+        public async Task LoadData()
         {
-            Console.WriteLine("WTF");
+            var depoAmount = await _depositRepo.GetAmount();
+            var withAmount = await _withdrawRepo.GetAmount();
+            Balance = $"{(depoAmount - withAmount):C}";
         }
     }
 }
