@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
+using TipWallet.Models;
 using TipWallet.Repository;
 using Xamarin.Forms;
 
@@ -15,14 +16,16 @@ namespace TipWallet.ViewModels
             _depoRepo = depoRepo;
         }
 
-        ///////////////Buttons///////////////
+        public DepositModel Deposit { get; set; } = new DepositModel();
 
+        ///////////////Buttons///////////////
         /// <summary>
         /// This will add the funds to the depoRepo table
         /// </summary>
         public ICommand AddFunds => new Command(async () =>
         {
-
+            await _depoRepo.AddOrUpdate(Deposit);
+            await Navigation.PopAsync();
         });
 
     }
