@@ -7,6 +7,8 @@
             <Style TargetType="NavigationPage">
                 <Setter Property="BackgroundColor"
                         Value="Black"/>
+                <Setter Property="BarBackgroundColor"
+                        Value="Red"/>
             </Style>
             <Style TargetType="Label">
                 <Setter Property="TextColor"
