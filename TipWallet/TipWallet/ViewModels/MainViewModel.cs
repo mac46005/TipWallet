@@ -37,7 +37,13 @@ namespace TipWallet.ViewModels
 
         });
         ///////////////Properties///////////////
-        public string Balance { get; set; }
+        public string Balance 
+        { 
+            get 
+            {
+                var depositAmount = 
+            } 
+        }
 
     }
 }

@@ -5,6 +5,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using TipWallet.Models;
+using System.Linq;
 
 namespace TipWallet.Repository
 {
@@ -63,6 +64,18 @@ namespace TipWallet.Repository
         {
             await CreateConnection();
             await _connection.UpdateAsync(obj);
+        }
+
+        public async Task<decimal> GetAmount()
+        {
+            var table = await _connection.Table<DepositModel>().ToListAsync();
+            var amounts = table.Select(x => x.Amount);
+            decimal total = 0;
+            foreach (var amount in amounts)
+            {
+                total += amount;
+            }
+            return total;
         }
     }
 }
