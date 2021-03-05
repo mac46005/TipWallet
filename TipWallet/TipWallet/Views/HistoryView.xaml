@@ -4,9 +4,15 @@
              x:Class="TipWallet.Views.HistoryView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <TableView>
+                <TableRoot Title="WIthdraw">
+                    <TableSection>
+                        <EntryCell Label="AMount"/>
+                        <EntryCell Label="Description"/>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button Text="Submit"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
