@@ -21,6 +21,7 @@ namespace TipWallet.ViewModels
         ///////////////Buttons///////////////
         /// <summary>
         /// This will add the funds to the depoRepo table
+        /// And return to the MainView
         /// </summary>
         public ICommand AddFunds => new Command(async () =>
         {
