@@ -19,6 +19,7 @@ namespace TipWallet.ViewModels
         {
             _depositRepo = depoRepo;
             _withdrawRepo = withRepo;
+            _depositRepo.OnObjAdded += (sender, e) => Task.Run(async () => await LoadData());
             Task.Run(async () => await LoadData());
         }
         ///////////////Top Bar Buttons///////////////
@@ -48,5 +49,6 @@ namespace TipWallet.ViewModels
             var withAmount = await _withdrawRepo.GetAmount();
             Balance = $"{(depoAmount - withAmount):C}";
         }
+        public event EventHandler Balancepdated;
     }
 }

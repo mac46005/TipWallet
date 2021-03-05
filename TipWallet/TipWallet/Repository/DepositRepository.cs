@@ -34,6 +34,7 @@ namespace TipWallet.Repository
         {
             await CreateConnection();
             await _connection.InsertAsync(obj);
+            OnObjAdded?.Invoke(this, obj);
         }
 
         public async Task AddOrUpdate(DepositModel obj)

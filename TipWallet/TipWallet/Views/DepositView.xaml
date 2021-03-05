@@ -9,7 +9,9 @@
                     <TableSection>
                         <TextCell Text="Enter Amount"/>
                         <EntryCell LabelColor="Red" Label="Amount" Placeholder="$0.00" Text="{Binding Deposit.Amount}"/>
-                        <EntryCell LabelColor="Red" Label="Date" Text="{Binding Deposit.TimeStamp}"/>
+                        <ViewCell>
+                            <DatePicker Date="{Binding Deposit.TimeStamp}"/>
+                        </ViewCell>
                     </TableSection>
                 </TableRoot>
             </TableView>
