@@ -13,7 +13,7 @@
                     </TableSection>
                 </TableRoot>
             </TableView>
-            <Button Text="Submit"/>
+            <Button Text="Submit" Command="{Binding SubmitButton}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
