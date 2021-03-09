@@ -4,9 +4,16 @@
              x:Class="TipWallet.Views.WithdrawView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <TableView>
+                <TableRoot Title="Withdraw">
+                    <TableSection>
+                        <EntryCell Label="Amount" Text="{Binding WithdrawModel.Amount}"/>
+                        <EntryCell Label="Description" Text="{Binding Withdraw.Description}"/>
+                        <EntryCell Label="TimeStamp" Text="{Binding WithdrawModel.TimeStamp}"/>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button Text="Submit"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
