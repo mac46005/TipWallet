@@ -8,8 +8,11 @@
                 <TableRoot Title="Withdraw">
                     <TableSection>
                         <EntryCell Label="Amount" Text="{Binding WithdrawModel.Amount}"/>
-                        <EntryCell Label="Description" Text="{Binding Withdraw.Description}"/>
-                        <EntryCell Label="TimeStamp" Text="{Binding WithdrawModel.TimeStamp}"/>
+                        <EntryCell Label="Description" Text="{Binding WithdrawModel.Description}"/>
+                        <TextCell Text="Time Stamp"/>
+                        <ViewCell>
+                            <DatePicker Date="{Binding WithdrawModel.TimeStamp}"/>
+                        </ViewCell>
                     </TableSection>
                 </TableRoot>
             </TableView>

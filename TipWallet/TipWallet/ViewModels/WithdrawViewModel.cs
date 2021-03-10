@@ -15,7 +15,7 @@ namespace TipWallet.ViewModels
         {
             _withdrawRepo = withdrawRepo;
         }
-        public WithdrawModel WithdrawModel { get; set; }
+        public WithdrawModel WithdrawModel { get; set; } = new WithdrawModel();
 
         public ICommand SubmitButton => new Command(async () =>
         {
