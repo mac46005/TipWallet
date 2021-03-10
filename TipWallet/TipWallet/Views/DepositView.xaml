@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TipWallet.Views.DepositView">
+             x:Class="TipWallet.Views.DepositView"
+             Title="Deposit">
     <ContentPage.Content>
         <StackLayout>
             <TableView>
                 <TableRoot Title="Deposit">
                     <TableSection>
-                        <TextCell Text="Enter Amount"/>
-                        <EntryCell LabelColor="Red" Label="Amount" Placeholder="$0.00" Text="{Binding Deposit.Amount}"/>
-                        <EntryCell LabelColor="Red" Label="Description" Placeholder="Enter description here" Text="{Binding Deposit.Description}"/>
+                        <EntryCell LabelColor="Red" Label="Amount" Placeholder="$0.00" Text="{Binding DepositModel.Amount}"/>
+                        <EntryCell LabelColor="Red" Label="Description" Placeholder="Enter description here" Text="{Binding DepositModel.Description}"/>
                         <ViewCell>
-                            <DatePicker Date="{Binding Deposit.TimeStamp}"/>
+                            <DatePicker Date="{Binding DepositModel.TimeStamp}"/>
                         </ViewCell>
                     </TableSection>
                 </TableRoot>

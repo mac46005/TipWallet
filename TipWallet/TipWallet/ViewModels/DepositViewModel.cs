@@ -16,7 +16,7 @@ namespace TipWallet.ViewModels
             _depoRepo = depoRepo;
         }
 
-        public DepositModel Deposit { get; set; } = new DepositModel();
+        public DepositModel DepositModel { get; set; } = new DepositModel();
 
         ///////////////Buttons///////////////
         /// <summary>
@@ -25,7 +25,7 @@ namespace TipWallet.ViewModels
         /// </summary>
         public ICommand AddFunds => new Command(async () =>
         {
-            await _depoRepo.AddOrUpdate(Deposit);
+            await _depoRepo.AddOrUpdate(DepositModel);
             await Navigation.PopAsync();
         });
 
