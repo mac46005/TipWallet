@@ -20,8 +20,6 @@ namespace TipWallet.ViewsModels
             _withRepo = withRepo;
         }
         public IBankLog Transaction { get; set; }
-
-
         public ICommand EditButton => new Command(async () =>
         {
             if (Transaction is DepositModel)
