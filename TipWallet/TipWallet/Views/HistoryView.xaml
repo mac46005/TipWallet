@@ -12,9 +12,17 @@
         <ListView ItemsSource="{Binding Transactions}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <ViewCell Height="200">
                         <Grid BackgroundColor="{Binding Transaction,Converter={StaticResource tConverter}}">
-                            <Label Text="{Binding Transaction.Amount}"/>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="{Binding Transaction.Amount}"/>
+                            <Label Grid.Row="1" Text="{Binding Transaction.TimeStamp}"/>
+                            <Label Grid.Row="2" Text="{Binding Transaction.Description}"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
