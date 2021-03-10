@@ -9,10 +9,12 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <StackLayout>
-        <ListView ItemsSource="{Binding Transactions}">
+        <ListView ItemsSource="{Binding Transactions}" RowHeight="125"
+                  SelectedItem="{Binding SelectedItem}"
+                  >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell Height="200">
+                    <ViewCell>
                         <Grid BackgroundColor="{Binding Transaction,Converter={StaticResource tConverter}}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
@@ -22,7 +24,8 @@
                             </Grid.RowDefinitions>
                             <Label Grid.Row="0" Text="{Binding Transaction.Amount}"/>
                             <Label Grid.Row="1" Text="{Binding Transaction.TimeStamp}"/>
-                            <Label Grid.Row="2" Text="{Binding Transaction.Description}"/>
+                            <Label Grid.Row="2" Text="Description:"/>
+                            <Label Grid.Row="3" Text="{Binding Transaction.Description}"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
