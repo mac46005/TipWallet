@@ -30,16 +30,31 @@ namespace TipWallet.ViewsModels
                 v.BindingContext = Resolver.Resolve<DepositViewModel>();
                 var vm = v.BindingContext as DepositViewModel;
                 vm.DepositModel = (DepositModel)Transaction;
+                await Navigation.PushAsync(v);
             }
             else
             {
-
+                var v = Resolver.Resolve<WithdrawView>();
+                v.BindingContext = Resolver.Resolve<WithdrawViewModel>();
+                var vm = v.BindingContext as WithdrawViewModel;
+                vm.WithdrawModel = (WithdrawModel)Transaction;
+                await Navigation.PushAsync(v);
             }
         });
 
+
         public ICommand DeleteButton => new Command(async () =>
         {
-
+            if (Transaction is DepositModel)
+            {
+                await _depoRepo.DeleteItem((DepositModel)Transaction);
+                await Navigation.PopToRootAsync();
+            }
+            else
+            {
+                await _withRepo.DeleteItem((WithdrawModel)Transaction);
+                await Navigation.PopToRootAsync();
+            }
         });
     }
 }

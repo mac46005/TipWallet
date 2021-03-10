@@ -11,8 +11,8 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button Grid.Row="1" Text="Edit" BackgroundColor="Orange"/>
-            <Button Grid.Row="3" Text="Delete" BackgroundColor="Salmon"/>
+            <Button Grid.Row="1" Text="Edit" BackgroundColor="Orange" Command="{Binding EditButton}"/>
+            <Button Grid.Row="3" Text="Delete" BackgroundColor="Salmon" Command="{Binding DeleteButton}"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

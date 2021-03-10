@@ -55,6 +55,7 @@ namespace TipWallet.Repository
         {
             await CreateConnection();
             await _connection.DeleteAsync(obj);
+            OnObjDeleted?.Invoke(this, obj);
         }
 
         public async Task<List<WithdrawModel>> GetItems()

@@ -26,7 +26,7 @@ namespace TipWallet.ViewModels
         public ICommand AddFunds => new Command(async () =>
         {
             await _depoRepo.AddOrUpdate(DepositModel);
-            await Navigation.PopAsync();
+            await Navigation.PopToRootAsync();
         });
 
     }

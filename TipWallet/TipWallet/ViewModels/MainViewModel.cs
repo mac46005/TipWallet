@@ -19,8 +19,12 @@ namespace TipWallet.ViewModels
         {
             _depositRepo = depoRepo;
             _withdrawRepo = withRepo;
+
             _depositRepo.OnObjAdded += (sender, e) => Task.Run(async () => await LoadData());
             _withdrawRepo.OnObjAdded += (sender, e) => Task.Run(async () => await LoadData());
+            //probably not needed
+            _depositRepo.OnObjDeleted += (sender, e) => Task.Run(async () => await LoadData());
+            _withdrawRepo.OnObjDeleted += (sender, e) => Task.Run(async () => await LoadData());
             Task.Run(async () => await LoadData());
         }
         ///////////////Top Bar Buttons///////////////

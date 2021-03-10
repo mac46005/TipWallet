@@ -19,8 +19,8 @@ namespace TipWallet.ViewModels
 
         public ICommand SubmitButton => new Command(async () =>
         {
-            await _withdrawRepo.AddItem(WithdrawModel);
-            await Navigation.PopAsync();
+            await _withdrawRepo.AddOrUpdate(WithdrawModel);
+            await Navigation.PopToRootAsync();
         });
     }
 }

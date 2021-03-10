@@ -17,7 +17,7 @@ namespace TipWallet.ViewModels
         WithdrawRepository _withRepo;
         DepositRepository _depoRepo;
 
-        public HistoryViewModel(WithdrawRepository withRepo,DepositRepository depoRepo)
+        public HistoryViewModel(WithdrawRepository withRepo, DepositRepository depoRepo)
         {
             _withRepo = withRepo;
             _depoRepo = depoRepo;
@@ -38,11 +38,16 @@ namespace TipWallet.ViewModels
         /// <returns>Void</returns>
         public async Task LoadData()
         {
-            Transactions = new ObservableCollection<TransactionViewModel>();
+
+            var list = new ObservableCollection<TransactionViewModel>();
             var with = await _withRepo.GetItems();
-            with.ForEach(x => { Transactions.Add(CreateTransVM(x)); });
+            with.ForEach(x => { list.Add(CreateTransVM(x)); });
             var depo = await _depoRepo.GetItems();
-            depo.ForEach(x => { Transactions.Add(CreateTransVM(x)); });
+            depo.ForEach(x => { list.Add(CreateTransVM(x)); });
+            var descendList = from t in list
+                              orderby t.Transaction.TimeStamp descending
+                              select t;
+            Transactions = new ObservableCollection<TransactionViewModel>(descendList);
         }
 
 
@@ -65,9 +70,9 @@ namespace TipWallet.ViewModels
         /// <summary>
         /// Selects an item from the list view and sends it to the editdelete view
         /// </summary>
-        public TransactionViewModel SelectedItem 
+        public TransactionViewModel SelectedItem
         {
-            get => null; 
+            get => null;
             set
             {
                 Device.BeginInvokeOnMainThread(async () =>
@@ -75,7 +80,7 @@ namespace TipWallet.ViewModels
                     await NavigateToPage(value);
                     OnPropertyChanged(nameof(SelectedItem));
                 });
-                
+
             }
         }
         /// <summary>
