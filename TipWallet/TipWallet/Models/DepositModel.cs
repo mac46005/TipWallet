@@ -13,5 +13,6 @@ namespace TipWallet.Models
         public decimal Amount { get; set; }
         [NotNull]
         public DateTime TimeStamp { get; set; } = DateTime.Now;
+        public string Description { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }
