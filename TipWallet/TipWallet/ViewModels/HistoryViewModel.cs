@@ -22,18 +22,18 @@ namespace TipWallet.ViewModels
             Task.Run(async () => await LoadData());
         }
 
-        public ObservableCollection<IBankLog> Transactions { get; set; }
+        public ObservableCollection<TransactionViewModel> Transactions { get; set; }
         public async Task LoadData()
         {
-            Transactions = new ObservableCollection<IBankLog>();
+            Transactions = new ObservableCollection<TransactionViewModel>();
             var with = await _withRepo.GetItems();
-            with.ForEach(x => { Transactions.Add(x); });
+            with.ForEach(x => { Transactions.Add(CreateTransVM(x)); });
             var depo = await _depoRepo.GetItems();
-            depo.ForEach(x => { Transactions.Add(x); });
+            depo.ForEach(x => { Transactions.Add(CreateTransVM(x)); });
         }
-        private DetailsViewModel CreateDetail(IBankLog transaction)
+        private TransactionViewModel CreateTransVM(IBankLog transaction)
         {
-            var vm = Resolver.Resolve<DetailsViewModel>();
+            var vm = Resolver.Resolve<TransactionViewModel>();
             vm.Transaction = transaction;
             return vm;
         }

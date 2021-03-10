@@ -1,12 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:TipWallet.Converters"
              x:Class="TipWallet.Views.HistoryView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:TransactionTypeConverter x:Key="tConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <StackLayout>
         <ListView ItemsSource="{Binding Transactions}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Transaction.Amount}"/>
+                    <ViewCell>
+                        <Grid BackgroundColor="{Binding Transaction,Converter={StaticResource tConverter}}">
+                            <Label Text="{Binding Transaction.Amount}"/>
+                        </Grid>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

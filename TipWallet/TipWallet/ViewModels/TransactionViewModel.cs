@@ -5,7 +5,7 @@ using TipWallet.Models;
 
 namespace TipWallet.ViewModels
 {
-    public class DetailsViewModel : ViewModel
+    public class TransactionViewModel : ViewModel
     {
         public IBankLog Transaction { get; set; }
 
