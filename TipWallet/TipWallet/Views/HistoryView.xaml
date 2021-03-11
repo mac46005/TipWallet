@@ -2,11 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:TipWallet.Converters"
-             x:Class="TipWallet.Views.HistoryView">
+             x:Class="TipWallet.Views.HistoryView"
+             Title="Transaction History">
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:TransactionTypeConverter x:Key="tConverter"/>
         </ResourceDictionary>
+        <Style TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="Black"/>
+        </Style>
     </ContentPage.Resources>
     <StackLayout>
         <ListView ItemsSource="{Binding Transactions}" RowHeight="125"
